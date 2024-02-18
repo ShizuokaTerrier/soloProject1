@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const scoresController = require('./scores/scores.controller');
 const usersController = require('./users/users.controller');
-require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 
 const PORT = process.env.PORT || 8123;
 
@@ -12,7 +12,7 @@ app.use(express.json());
 
 //test
 app.get('https://soloprojectbackend.onrender.com/', (req, res) => {
-    res.send('I work just fine thank you...');
+    res.send('I work just fine thank you...', PORT);
   });
 
 // USER ROUTES
