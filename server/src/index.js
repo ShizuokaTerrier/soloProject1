@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //test
-app.get('/', (req, res) => {
+app.get('https://soloprojectbackend.onrender.com/', (req, res) => {
     res.send('I work just fine thank you...');
   });
 
