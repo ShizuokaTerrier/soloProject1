@@ -29,6 +29,6 @@ app.get('/scores/:id', scoresController.getAllScoresForOne);
 app.post('/scores', scoresController.addScores);
 app.delete('/scores/:id', scoresController.deleteAllUsersScores);
 
-app.listen(8123, ()=>{
+app.listen(PORT, ()=>{
     console.log("The server is listening")
 })
