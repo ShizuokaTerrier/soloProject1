@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 //test
-app.get('https://soloprojectbackend.onrender.com/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('I work just fine thank you...', PORT);
   });
 
