@@ -8,7 +8,7 @@
     "build": "npm install",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
-    "start": "node .src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
