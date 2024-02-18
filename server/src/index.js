@@ -5,6 +5,8 @@ const scoresController = require('./scores/scores.controller');
 const usersController = require('./users/users.controller');
 require('dotenv').config();
 
+const PORT = process.env.PORT || 8123;
+
 app.use(cors());
 app.use(express.json());
 
