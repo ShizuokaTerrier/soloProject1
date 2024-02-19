@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-function SandTHMinimalPairs(){
+function SandTHMinimalPairs({setView}){
 
     const arrayOfPairs = [
     ["Sick", "Thick"],
@@ -72,9 +72,7 @@ function checkAnswerOne(num){
     }
 }
 
-if (clickCount === 3){
 
-}
 
 
 
@@ -93,7 +91,7 @@ if (clickCount === 3){
             </tr>)}
         )}
         </tbody>
-        <button></button>
+        <button onClick={(e)=>{setView('Home')}}>Home</button>
         </>
 )}
 
