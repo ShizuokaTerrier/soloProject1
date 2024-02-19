@@ -1,13 +1,18 @@
 import { useState } from 'react'
 import './App.css'
 
+import SandTHMinimalPairs from './components/SandTHMinimalPairs'
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  
+  
 
   return (
     <>
       <div>
         <h1>Listening Practice App</h1>
+        <SandTHMinimalPairs/>
       </div>
     </>
   )
