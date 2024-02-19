@@ -3,6 +3,8 @@ import './App.css'
 
 import SandTHMinimalPairs from './components/SandTHMinimalPairs'
 import Home from './components/Home';
+import LandRMinimalPairs from './components/LandRMinimalPairs';
+import BandPMinimalPairs from './components/BandPMinimalPairs';
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
 
   const components = {
     Home: ()=>{ return <Home setView={setView}/>},
-    sAndTh: ()=>{ return <SandTHMinimalPairs setView={setView} />}
+    SAndTh: ()=>{ return <SandTHMinimalPairs setView={setView} />},
+    LandR: ()=>{ return <LandRMinimalPairs setView={setView}/>},
+    BandP: ()=>{ return <BandPMinimalPairs setView={setView}/>}
   }
 
   useEffect(()=>{
