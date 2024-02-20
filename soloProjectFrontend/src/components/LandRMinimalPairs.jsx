@@ -16,7 +16,8 @@ const [answer2, setAnswer2] = useState(0);
 const [answer3, setAnswer3] = useState(0);
 const [answer4, setAnswer4] = useState(0);
 
-const [clickCount, setClickCount] = useState(0)
+const [clickCount, setClickCount] = useState(0);
+const [gameOver, setGameOver] = useState();
 
 useEffect(()=>{
     setAnswer1(flipACoin);
@@ -72,6 +73,29 @@ function checkAnswerOne(num){
     }
 }
 
+const body = {score: score};
+
+async function updateScore(){
+    try {
+        console.log("I'm trying dammit");
+        const result = await fetch ("https://soloprojectbackend.onrender.com/scores", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(body)
+        });
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+if(clickCount === 4){
+    updateScore()
+    console.log("I ran the scores to...")
+}
+
+  
+
+  
 
 
 

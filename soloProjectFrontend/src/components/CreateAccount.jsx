@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CreateAccount(){
+function CreateAccount({setView}){
 
     // For creating a new account
 
@@ -57,6 +57,8 @@ function CreateAccount(){
         } catch (error) {
             console.log(error.message)
         }
+
+        {setView('Home')}
     };
 
     // error and success messages 

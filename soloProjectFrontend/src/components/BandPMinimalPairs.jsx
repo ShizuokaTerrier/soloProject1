@@ -72,6 +72,26 @@ function checkAnswerOne(num){
     }
 }
 
+const body = {score: score};
+
+async function updateScore(){
+    try {
+        console.log("I'm trying dammit");
+        const result = await fetch ("https://soloprojectbackend.onrender.com/scores", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(body)
+        });
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+if(clickCount === 4){
+    updateScore()
+    console.log("I ran the scores to...")
+}
+
 
 
 
