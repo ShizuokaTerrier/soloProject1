@@ -35,5 +35,5 @@ app.delete('/scores/:id', scoresController.deleteAllUsersScores);
 
 
 app.listen(PORT, ()=>{
-    console.log("The server is listening")
+    console.log("The server is listening", PORT)
 })

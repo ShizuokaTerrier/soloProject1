@@ -66,6 +66,7 @@ function Login({setView}){
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });   
+            console.log(result)
         } catch (error) {
             console.log(error.message)
         }

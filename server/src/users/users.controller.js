@@ -62,6 +62,8 @@ module.exports = {
         try {
             const loginInfo = req.body;
             const loginTheUser = await userModel.loginAUser(loginInfo);
+            console.log(loginInfo.password)
+            console.log(loginTheUser.password)
             bcrypt.compare(loginInfo.password, loginTheUser.password, function(err,result){
                 if(err){
                     console.log(err);
