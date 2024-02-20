@@ -30,5 +30,11 @@ module.exports = {
         return knex(USER_TABLE)
         .where('id', '=', id)
         .update(updateInfo);
+    },
+
+    loginAUser(loginInfo){
+        return knex(USER_TABLE)
+        .where("username", loginInfo.username).returning('*');
     }
+
 }

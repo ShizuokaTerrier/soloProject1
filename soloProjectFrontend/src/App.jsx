@@ -6,10 +6,11 @@ import Home from './components/Home';
 import LandRMinimalPairs from './components/LandRMinimalPairs';
 import BandPMinimalPairs from './components/BandPMinimalPairs';
 import CreateAccount from './components/CreateAccount';
+import Login from './components/Login';
 
 function App() {
 
-  const [view, setView]= useState('CreateAccount');
+  const [view, setView]= useState('Home');
   const [viewHTML, setViewHTML] = useState(<></>);
 
   const components = {
@@ -17,7 +18,8 @@ function App() {
     SAndTh: ()=>{ return <SandTHMinimalPairs setView={setView} />},
     LandR: ()=>{ return <LandRMinimalPairs setView={setView}/>},
     BandP: ()=>{ return <BandPMinimalPairs setView={setView}/>},
-    CreateAccount: ()=>{ return <CreateAccount setView={setView}/>}
+    CreateAccount: ()=>{ return <CreateAccount setView={setView}/>},
+    Login: ()=>{ return <Login setView={setView}/>}
   }
 
   useEffect(()=>{

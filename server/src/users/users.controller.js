@@ -56,5 +56,34 @@ module.exports = {
             console.log(error.message);
             res.status(400).send("You updated precisely nothing - try again");
         }
+    },
+
+    async userLogin(req,res){
+        try {
+            const loginInfo = req.body;
+            const loginTheUser = await userModel.loginAUser(loginInfo);
+            bcrypt.compare(loginInfo.password, loginTheUser.password, function(err,result){
+                if(err){
+                    console.log(err);
+                    res.status(500).send("Error when comparing password")
+                    return
+                }
+
+                if(result) {
+                    console.log("User autheticated");
+                    const objectToReturn = {
+                        username: username
+                    }
+                    res.status(200).send(objectToReturn);
+                } else {
+                    console.log("Incorrect Password");
+                    res.status(401).send("Nope... we don't recognise that password")
+                }
+            })
+            
+        } catch (error) {
+            console.log(error.message);
+            res.status(400).send("You failed to login")
+        }
     }
 }
