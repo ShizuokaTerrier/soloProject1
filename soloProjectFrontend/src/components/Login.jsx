@@ -67,12 +67,6 @@ function Login({setView}){
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });   
-            if (!result.ok) {
-                throw new Error(`HTTP error! Status: ${result.status}`);
-            }
-        
-            // Handle successful response
-            console.log("Login successful!");
         } catch (error) {
             console.log(error.message)
         }

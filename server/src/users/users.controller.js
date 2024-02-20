@@ -71,11 +71,8 @@ module.exports = {
                     return
                 }
 3
-                if(loginTheUser) {
+                if(result) {
                     console.log("User autheticated");
-                    const objectToReturn = {
-                        username: loginInfo.username,
-                    }
                     res.status(200).send(objectToReturn);
                 } else {
                     console.log("Incorrect Password");
