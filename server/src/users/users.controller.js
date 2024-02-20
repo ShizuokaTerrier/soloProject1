@@ -70,11 +70,11 @@ module.exports = {
                     res.status(500).send("Error when comparing password")
                     return
                 }
-
-                if(result) {
+3
+                if(loginTheUser) {
                     console.log("User autheticated");
                     const objectToReturn = {
-                        username: username
+                        username: loginInfo.username,
                     }
                     res.status(200).send(objectToReturn);
                 } else {

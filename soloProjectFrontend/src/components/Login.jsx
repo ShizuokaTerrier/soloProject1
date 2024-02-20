@@ -49,11 +49,12 @@ function Login({setView}){
     async function handleLogin(e){
         e.preventDefault();
         if (username === "" || password === ""){
-           
+            setError(true);
         } else {
             setSubmitted(true);
+            setError(false);
         }
-
+    
         const body = {
             username: username,
             password: password
@@ -66,7 +67,12 @@ function Login({setView}){
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });   
-            console.log(result)
+            if (!result.ok) {
+                throw new Error(`HTTP error! Status: ${result.status}`);
+            }
+        
+            // Handle successful response
+            console.log("Login successful!");
         } catch (error) {
             console.log(error.message)
         }
