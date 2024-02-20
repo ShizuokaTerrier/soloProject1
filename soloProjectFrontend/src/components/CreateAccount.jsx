@@ -41,22 +41,22 @@ function CreateAccount(){
             setError(false);
         }
 
-        // const body = {
-        //     username: username, 
-        //     email: email,
-        //     password: password
-        // }
+        const body = {
+            username: username, 
+            email: email,
+            password: password
+        }
 
-        // try {
-        //     console.log("I'm trying dammit");
-        //     const result = await fetch ("https://soloprojectbackend.onrender.com/user_table", {
-        //         method: "POST",
-        //         headers: {"Content-Type": "application/json"},
-        //         body: JSON.stringify(body)
-        //     });
-        // } catch (error) {
-        //     console.log(error.message)
-        // }
+        try {
+            console.log("I'm trying dammit");
+            const result = await fetch ("https://soloprojectbackend.onrender.com/user_table", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(body)
+            });
+        } catch (error) {
+            console.log(error.message)
+        }
     };
 
     // error and success messages 
