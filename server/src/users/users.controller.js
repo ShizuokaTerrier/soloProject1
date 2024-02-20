@@ -1,4 +1,5 @@
 const userModel = require('./users.model')
+const bcrypt = require('bcrypt');
 
 module.exports = {
     async allUsers(req,res){
@@ -23,7 +24,10 @@ module.exports = {
     },
     async addANewUser(req,res){
         try {
-            const newUserData = await userModel.addNewUser(req.body);
+            const salt = await bcrypt.genSalt()
+            const user = {username:req.body.username, email:req.body.email, password: hashedPassword}
+            const hashedPassword = await bcrypt.hash(req.body.password, salt)
+            const newUserData = await userModel.addNewUser(user);
             res.status(200).send(newUserData);
         } catch (error) {
             console.log(error.message);

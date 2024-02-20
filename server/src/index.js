@@ -4,6 +4,7 @@ const cors = require('cors');
 const scoresController = require('./scores/scores.controller');
 const usersController = require('./users/users.controller');
 require('dotenv').config({path: '../.env'});
+const bcrypt = require('bcrypt');
 
 const PORT = process.env.PORT || 8123;
 
