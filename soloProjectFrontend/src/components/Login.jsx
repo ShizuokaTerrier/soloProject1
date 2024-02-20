@@ -62,7 +62,7 @@ function Login({setView}){
 
         try {
             console.log("I think I can, I think I can...");
-            const result = await fetch("https://soloprojectbackend.onrender.com/login", {
+            const result = await fetch("http://localhost:8123/login", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)

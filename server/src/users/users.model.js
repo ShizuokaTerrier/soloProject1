@@ -32,9 +32,9 @@ module.exports = {
         .update(updateInfo);
     },
 
-    loginAUser(loginInfo){
+    loginAUser(reqbody){
         return knex(USER_TABLE)
-        .where("username", loginInfo.username).returning('*');
+        .where("username", reqbody.username).returning('*');
     }
 
 }

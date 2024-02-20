@@ -62,9 +62,8 @@ module.exports = {
         try {
             const loginInfo = req.body;
             const loginTheUser = await userModel.loginAUser(loginInfo);
-            console.log(loginInfo.password)
-            console.log(loginTheUser.password)
-            bcrypt.compare(loginInfo.password, loginTheUser.password, function(err,result){
+            const hashedPassword = loginTheUser[0].password;
+            bcrypt.compare(loginInfo.password, hashedPassword, function(err,result){
                 if(err){
                     console.log(err);
                     res.status(500).send("Error when comparing password")
@@ -73,7 +72,7 @@ module.exports = {
 3
                 if(result) {
                     console.log("User autheticated");
-                    res.status(200).send(objectToReturn);
+                    res.status(200).send();
                 } else {
                     console.log("Incorrect Password");
                     res.status(401).send("Nope... we don't recognise that password")
