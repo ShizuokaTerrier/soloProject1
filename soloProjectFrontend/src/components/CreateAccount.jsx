@@ -13,7 +13,7 @@ function CreateAccount(){
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
 
-    // Handler function 
+    // Handler functions for inputs
     
     const handleUsername = (e)=>{
         setUsername(e.target.value);
@@ -26,18 +26,37 @@ function CreateAccount(){
     };
 
     const handlePassword = (e)=>{
-        setPassword(e.targte.value);
+        setPassword(e.target.value);
         setSubmitted(false);
     };
 
-    const handleSubmit = (e)=>{
+    // submit to the database 
+
+    async function handleSubmit(e){
         e.preventDefault();
-        if (username === "" || email === "" || pasword === ""){
+        if (username === "" || email === "" || password === ""){
             setError(true);
         } else {
             setSubmitted(true);
             setError(false);
         }
+
+        // const body = {
+        //     username: username, 
+        //     email: email,
+        //     password: password
+        // }
+
+        // try {
+        //     console.log("I'm trying dammit");
+        //     const result = await fetch ("https://soloprojectbackend.onrender.com/user_table", {
+        //         method: "POST",
+        //         headers: {"Content-Type": "application/json"},
+        //         body: JSON.stringify(body)
+        //     });
+        // } catch (error) {
+        //     console.log(error.message)
+        // }
     };
 
     // error and success messages 
@@ -46,7 +65,7 @@ function CreateAccount(){
         return (
             <>
             <div className="error" style={{display: error ? "": "none"}}>
-                <h1>Please enter all the fields</h1>
+                <h3>Please enter all the fields</h3>
             </div>
             </>
         )
@@ -56,7 +75,7 @@ function CreateAccount(){
         return (
             <>
             <div className="success" style={{display: submitted ? "": "none"}}>
-                <h1>Account created!</h1>
+                <h2>Account created!</h2>
             </div>
             </>
         )
@@ -68,10 +87,13 @@ function CreateAccount(){
 
 
 
+
+
+
     return (
         <>
         <div>
-            <h1>Create an Account</h1>
+            <h3>Create an Account</h3>
         </div>
         <div className="messages">
             {errorMessage()}
@@ -79,15 +101,15 @@ function CreateAccount(){
         </div>
 
         <form>
-            <label className="label">Username</label>
+            <label>Username</label>
             <input onChange={handleUsername} placeholder="username" className="input" value={username} type="text" />
 
             <label>Email</label>
             <input onChange={handleEmail} placeholder="email" className="input" value={email}type="text" />
 
-            <label className="label">password</label>
-            <input onChange={handlePassword} placeholder="password" className="input" value={password} type="text" />
-            <button onClick={handleSubmit} className="btn" type="submit"></button>
+            <label>Password</label>
+            <input onChange={handlePassword} placeholder="password" className="input" value={password} type="password" />
+            <button onClick={handleSubmit} className="btn" type="submit">Create Account</button>
         </form>
         </>
     )
