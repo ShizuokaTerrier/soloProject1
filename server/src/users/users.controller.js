@@ -24,9 +24,9 @@ module.exports = {
     },
     async addANewUser(req,res){
         try {
-            const salt = await bcrypt.genSalt()
-            const user = {username:req.body.username, email:req.body.email, password: hashedPassword}
+            const salt = await bcrypt.genSalt(10)
             const hashedPassword = await bcrypt.hash(req.body.password, salt)
+            const user = {username:req.body.username, email:req.body.email, password: hashedPassword}
             const newUserData = await userModel.addNewUser(user);
             res.status(200).send(newUserData);
         } catch (error) {

@@ -10,6 +10,7 @@ function Home({setView}){
         <button onClick={()=>{setView('SAndTh')}}>Practice 'S' & 'Th'</button>
         <button onClick={()=>{setView('LandR')}}>Practice 'L' & 'R'</button>
         <button onClick={()=>{setView('BandP')}}>Practice 'B' & 'P'</button>
+        <button onClick={()=>{setView('CreateAccount')}}>Create an Account</button>
         </>
     )
 };
