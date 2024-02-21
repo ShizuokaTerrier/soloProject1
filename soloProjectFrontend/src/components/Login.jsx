@@ -99,6 +99,7 @@ function Login({setView}){
             <button onClick={()=>{setView('SAndTh')}}>Practice 'S' & 'Th'</button>
              <button onClick={()=>{setView('LandR')}}>Practice 'L' & 'R'</button>
              <button onClick={()=>{setView('BandP')}}>Practice 'B' & 'P'</button>
+             <button onClick={()=>{setView('SyllableCountries')}}>Syllables and Countries</button>
             </div>
              
         ):(

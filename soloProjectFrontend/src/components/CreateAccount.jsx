@@ -83,15 +83,6 @@ function CreateAccount({setView}){
         )
     }
 
-
-
-
-
-
-
-
-
-
     return (
         <>
         <div>

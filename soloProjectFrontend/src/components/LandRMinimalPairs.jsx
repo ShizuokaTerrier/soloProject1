@@ -120,3 +120,9 @@ if(clickCount === 4){
 )}
 
 export default LandRMinimalPairs;
+
+export function playWord(word){
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.rate = 1;
+    speechSynthesis.speak(utterance);
+}

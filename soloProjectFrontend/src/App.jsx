@@ -6,6 +6,7 @@ import Home from './components/Home';
 import LandRMinimalPairs from './components/LandRMinimalPairs';
 import BandPMinimalPairs from './components/BandPMinimalPairs';
 import CreateAccount from './components/CreateAccount';
+import SyllableCountries from './components/SyllableCountries';
 import Login from './components/Login';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     SAndTh: ()=>{ return <SandTHMinimalPairs setView={setView} />},
     LandR: ()=>{ return <LandRMinimalPairs setView={setView}/>},
     BandP: ()=>{ return <BandPMinimalPairs setView={setView}/>},
+    SyllableCountries: ()=>{ return <SyllableCountries setView={setView}/>},
     CreateAccount: ()=>{ return <CreateAccount setView={setView}/>},
     Login: ()=>{ return <Login setView={setView}/>}
   }
