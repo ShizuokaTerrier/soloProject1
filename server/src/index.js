@@ -13,7 +13,11 @@ app.use(express.json());
 
 //test
 app.get('/', (req, res) => {
-    res.status(400).send('I work just fine thank you...', PORT);
+    try {
+      res.status(200).send("Hello there")
+    } catch (error) {
+      console.log(error.message)
+    }
   });
 
 // USER ROUTES
