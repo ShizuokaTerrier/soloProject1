@@ -10,7 +10,7 @@ import Login from './components/Login';
 
 function App() {
 
-  const [view, setView]= useState('Home');
+  const [view, setView]= useState('CreateAccount');
   const [viewHTML, setViewHTML] = useState(<></>);
 
   const components = {

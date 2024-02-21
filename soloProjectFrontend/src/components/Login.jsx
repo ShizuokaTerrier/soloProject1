@@ -110,6 +110,7 @@ function Login({setView}){
             <label>Password</label>
             <input onChange={handlePassword} placeholder="password" className="input" value={password} type="password" />
             <button onClick={handleLogin} className="btn" type="submit">Login</button>
+            <button onClick={()=>{setView('CreateAccount')}}>Go Back</button>
         </form>)}
         </>
     )

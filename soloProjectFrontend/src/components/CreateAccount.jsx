@@ -113,6 +113,11 @@ function CreateAccount({setView}){
             <input onChange={handlePassword} placeholder="password" className="input" value={password} type="password" />
             <button onClick={handleSubmit} className="btn" type="submit">Create Account</button>
         </form>
+
+        <div>
+            <h3>Alreayd have an account?</h3>
+            <button onClick={()=>{setView('Login')}}>Login</button>
+        </div>
         </>
     )
 };
