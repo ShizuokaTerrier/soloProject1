@@ -104,9 +104,11 @@ if(clickCount === 4){
         arrayOfPairs.map((item, index) => {
             return (
             <tr key={index}>
+            <div className="question-set">
             <button className="play-button" onClick={(e)=>{playWord(item[answerArray[index]])}}>Play</button>
             <button onClick={(e)=>{checkAnswerZero(answerArray[index]); e.currentTarget.disabled = true}}>{item[0]}</button>
             <button onClick={(e)=>{checkAnswerOne(answerArray[index]); e.currentTarget.disabled = true}}>{item[1]}</button>
+            </div>
             </tr>)}
         )}
         </tbody>

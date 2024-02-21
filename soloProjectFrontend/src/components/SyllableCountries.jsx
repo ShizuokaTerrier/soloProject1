@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { playWord } from "./LandRMinimalPairs";
 
-function SyllableCountries(){
+function SyllableCountries({setView}){
     
     const arrayOfCountries = [
         ["Wales", "1"],
@@ -53,7 +53,7 @@ function SyllableCountries(){
                 arrayOfCountries.map((item,index)=>{
                     return (
                         <tr key={index}>
-                            <div className="syllable-game-container">
+                            <div className="question-set">
                             <button className="play-button" onClick={(e)=>{playWord(item[0])}}>play</button>
                             <input onChange={(e)=>{spellingCheck(index,e.target.value, e)}} type="text" className="text" placeholder="Country" />
                             <input onChange={(e)=>{syllableCountCheck(index,e.target.value, e)}} type="text" className="text" placeholder="Syllable count" />
@@ -64,6 +64,9 @@ function SyllableCountries(){
                 })
             }
         </tbody>
+        <div>
+        <button onClick={(e)=>{setView('Home')}}>Home</button>
+        </div>
         </>
     )
 }

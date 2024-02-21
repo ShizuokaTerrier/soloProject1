@@ -25,9 +25,10 @@ a:hover {
 }
 
 body {
+  display: flex;
+  justify-content: space-around;
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -51,7 +52,7 @@ button {
   margin: 2.5%;
   border-radius: 8px;
   border: 1px solid rgba(200, 200, 200, .7);
-  padding: 0.6em 2em;
+  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -67,12 +68,18 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 input {
   margin: 5%;
   border-radius: 8px;
   border: 1px solid rgba(200, 200, 200, .7);
   padding: 0.6em 2em;
   font-family: openDyslexic;
+}
+
+.question-set {
+  display: flex;
+  justify-content: center;
 }
 
 
