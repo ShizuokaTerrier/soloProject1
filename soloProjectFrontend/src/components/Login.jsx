@@ -6,9 +6,11 @@ function Login({setView}){
 
     const [username,setUsername]=useState("");
     const [password, setPassword]=useState("");
+    const [authenticatedUsername, setAuthenticatedUsername]=useState()
 
     const [submitted, setSubmitted]=useState();
     const [error,setError]=useState();
+
 
     // Handler functions for inputs
     
@@ -27,7 +29,7 @@ function Login({setView}){
         return (
             <>
             <div className="error" style={{display: error ? "": "none"}}>
-                <h3>Enter both your username and password.</h3>
+                <h3>Something didn't go to plan... </h3>
             </div>
             </>
         )
@@ -37,7 +39,7 @@ function Login({setView}){
         return (
             <>
             <div className="success" style={{display: submitted ? "": "none"}}>
-                <h2>You logged in!</h2>
+                <h2>Hello {username}</h2>
             </div>
             </>
         )
@@ -67,8 +69,14 @@ function Login({setView}){
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });   
+            if(result.ok === true) {
+                setAuthenticatedUsername(username)
+            } else {
+                setError(true)
+            };
         } catch (error) {
             console.log(error.message)
+            
         }
 
        
@@ -80,14 +88,21 @@ function Login({setView}){
 
     return (
         <>
-        <div>
-            <h3>Login</h3>
-        </div>
         <div className="messages">
             {errorMessage()}
-            {successMessage()}
+            
         </div>
-
+        {authenticatedUsername === username ?(
+            <div>
+            {successMessage()}
+            <h3>Ready to play?</h3>
+            <button onClick={()=>{setView('SAndTh')}}>Practice 'S' & 'Th'</button>
+             <button onClick={()=>{setView('LandR')}}>Practice 'L' & 'R'</button>
+             <button onClick={()=>{setView('BandP')}}>Practice 'B' & 'P'</button>
+            </div>
+             
+        ):(
+        
         <form>
             <label>Username</label>
             <input onChange={handleUsername} placeholder="username" className="input" value={username} type="text" />
@@ -95,7 +110,7 @@ function Login({setView}){
             <label>Password</label>
             <input onChange={handlePassword} placeholder="password" className="input" value={password} type="password" />
             <button onClick={handleLogin} className="btn" type="submit">Login</button>
-        </form>
+        </form>)}
         </>
     )
 };

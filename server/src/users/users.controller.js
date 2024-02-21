@@ -72,7 +72,8 @@ module.exports = {
 3
                 if(result) {
                     console.log("User autheticated");
-                    res.status(200).send();
+                    const authenticatedUsername = loginTheUser[0].username;
+                    res.status(200).send(authenticatedUsername);
                 } else {
                     console.log("Incorrect Password");
                     res.status(401).send("Nope... we don't recognise that password")
