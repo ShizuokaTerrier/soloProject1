@@ -10,7 +10,7 @@ This is a PERNK application (Postgresql, Express, React, Node.js, and Knex.js).
 2. Clone your forked repository
 3. Install the NPM packages
 
-- npm
+
 
   ```sh
   npm install npm@latest -g
