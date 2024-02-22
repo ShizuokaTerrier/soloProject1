@@ -66,7 +66,7 @@ function Login({setView}){
 
         try {
             console.log("Attempting to login");
-            const result = await fetch(`https://soloprojectbackend.onrender.com/login`, {
+            const result = await fetch(`${process.env.API_URL}/login`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
