@@ -14,7 +14,7 @@ This is a PERNK application (Postgresql, Express, React, Node.js, and Knex.js).
   ```sh
   npm install npm@latest -g
   ```
-  * npm
+
   ```sh
   npm i bcrypt cors dotenv express knex pg
   ```
