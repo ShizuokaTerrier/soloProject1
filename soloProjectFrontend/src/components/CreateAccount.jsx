@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import dotenv from dotenv;
 
-dotenv.config()
+
+
 
 function CreateAccount({setView}){
 
@@ -52,7 +52,7 @@ function CreateAccount({setView}){
 
         try {
             console.log("I'm trying dammit");
-            const result = await fetch (`${process.env.API_URL}/user_table`, {
+            const result = await fetch (`https://soloprojectbackend.onrender.com/user_table`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)

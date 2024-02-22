@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import dotenv from dotenv;
 
-dotenv.config()
+
+
 
 
 function Login({setView}){
@@ -69,7 +69,7 @@ function Login({setView}){
 
         try {
             console.log("Attempting to login");
-            const result = await fetch(`${process.env.API_URL}/login`, {
+            const result = await fetch(`https://soloprojectbackend.onrender.com/login`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
